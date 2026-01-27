@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:00:55 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 17:14:11 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:16:20 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class Animal
 
         Animal& operator=(const Animal&);
     
-        virtual void makeSound();
+        virtual void makeSound() const;
+        std::string getType() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:09:29 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 17:14:45 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:16:48 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ Animal &Animal::operator=(const Animal& a)
     return *this;
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
     std::cout << "Animal makes a sound!" << std::endl;
+}
+
+std::string Animal::getType() const
+{
+    return type;
 }
