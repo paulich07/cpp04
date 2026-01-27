@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 19:55:31 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 19:58:44 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:24:33 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ Dog::Dog(std::string type) : Animal(type)
     std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : Animal(other)
 {
     *this = other;
+    std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog::~Dog()

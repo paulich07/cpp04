@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 19:39:13 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 19:50:58 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:21:24 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat(std::string type) : Animal(type)
     std::cout << "Cat constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other) : Animal(other)
 {
     *this = other;
     std::cout << "Copy constructor called" << std::endl;

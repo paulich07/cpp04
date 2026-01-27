@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:00:26 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 19:59:14 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:23:48 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@ int main()
     j->makeSound();
     meta->makeSound();
     // ... more tests ... wrong animal
+    {
+        std::cout << "----- DOG TESTS -----" << std::endl;
+        Dog *d1 = new Dog();
+        Dog *d2 = new Dog(*d1);
+        *d2 = Dog("modified");
+        std::cout << d1->getType() << std::endl;
+        std::cout << d2->getType() << std::endl;
+        delete d1;
+        delete d2;
+    }
 
     delete meta;
     delete j;
