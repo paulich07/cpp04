@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:09:29 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 20:06:10 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:46:01 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,10 @@ void Animal::makeSound() const
 std::string Animal::getType() const
 {
     return type;
+}
+
+// Test
+void Animal::setType(std::string t)
+{
+    type = t;
 }

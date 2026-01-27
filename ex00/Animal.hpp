@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:00:55 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 20:08:36 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:48:29 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define ANIMAL_HPP
 
 #include <iostream>
+#include <string>
+
+# define GREEN   	"\033[0;32m"
+# define YELLOW  	"\033[0;33m"
+# define BLUE    	"\033[0;34m"
+# define MAGENTA 	"\033[0;35m"
+# define RESET   	"\033[0m"
 
 class Animal
 {
@@ -23,12 +30,15 @@ class Animal
         Animal();
         Animal(std::string);
         Animal(const Animal&);
-        virtual ~Animal();
+        virtual ~Animal(); // senza virtual le classi ereditate non chiamerebbero ~Animal
 
         Animal& operator=(const Animal&);
     
         virtual void makeSound() const;
         std::string getType() const;
+
+        // Test
+        void setType(std::string t);
 };
 
 #endif

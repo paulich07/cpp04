@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 20:03:52 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 20:30:13 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:49:09 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,9 @@ void WrongAnimal::makeSound() const
 std::string WrongAnimal::getType() const
 {
     return type;
+}
+
+void WrongAnimal::setType(std::string t)
+{
+    type = t;
 }
