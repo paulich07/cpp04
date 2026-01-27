@@ -6,7 +6,9 @@ CXXFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
 SRC = main.cpp \
 	  Animal.cpp \
 	  Dog.cpp \
-	  Cat.cpp
+	  Cat.cpp \
+	  WrongAnimal.cpp \
+	  WrongCat.cpp
 
 all: $(NAME)
 

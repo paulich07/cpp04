@@ -6,25 +6,48 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:00:26 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 20:52:14 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 21:04:09 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    // ... more tests ... wrong animal
+    {
+        std::cout << YELLOW << "----- STANDARD TEST -----" << RESET << std::endl;
+        const Animal* meta = new Animal();
+        const Animal* j = new Dog();
+        const Animal* i = new Cat();
+        std::cout << j->getType() << " " << std::endl;
+        std::cout << i->getType() << " " << std::endl;
+        i->makeSound(); //will output the cat sound!
+        j->makeSound();
+        meta->makeSound();
+
+        delete meta;
+        delete j;
+        delete i;
+    }
+    {
+        std::cout << YELLOW << "----- WRONG ANIMAL TEST -----" << RESET << std::endl;
+        const Animal* meta = new Animal();
+        const Animal* j = new Dog();
+        const WrongAnimal* i = new WrongCat();
+        std::cout << j->getType() << " " << std::endl;
+        std::cout << i->getType() << " " << std::endl;
+        i->makeSound(); // will output the WrongCat sound!
+        j->makeSound();
+        meta->makeSound();
+
+        delete meta;
+        delete j;
+        delete i;
+    }
     {
         std::cout << YELLOW << "----- Deep copy TEST -----" << RESET << std::endl;
         Dog *d1 = new Dog();
@@ -36,13 +59,6 @@ int main()
         delete d1;
         delete d2;
     }
-    {
-        std::cout << "----- wrong animal TESTS -----" << std::endl;
-        
-    }
 
-    delete meta;
-    delete j;
-    delete i;
     return 0;
 }
