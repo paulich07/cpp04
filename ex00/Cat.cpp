@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/27 19:39:13 by plichota          #+#    #+#             */
+/*   Updated: 2026/01/27 19:50:58 by plichota         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Cat.hpp"
+
+Cat::Cat() : Animal("cat")
+{
+    std::cout << "Cat default constructor called" << std::endl;
+}
+
+Cat::Cat(std::string type) : Animal(type)
+{
+    std::cout << "Cat constructor called" << std::endl;
+}
+
+Cat::Cat(const Cat &other)
+{
+    *this = other;
+    std::cout << "Copy constructor called" << std::endl;
+}
+
+Cat::~Cat()
+{
+    std::cout << "Cat destructor called" << std::endl;
+}
+
+Cat &Cat::operator=(const Cat &other)
+{
+    if (this != &other)
+    {
+        this->type = other.type;
+    }
+    return *this;
+}
+
+void Cat::makeSound() const
+{
+    std::cout << type << ": Meow" << std::endl;
+}

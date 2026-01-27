@@ -6,11 +6,13 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:00:26 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 17:15:02 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 19:59:14 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int main()
 {
@@ -24,5 +26,8 @@ int main()
     meta->makeSound();
     // ... more tests ... wrong animal
 
+    delete meta;
+    delete j;
+    delete i;
     return 0;
 }
