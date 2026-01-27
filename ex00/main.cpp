@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:00:26 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 21:04:09 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/27 22:01:37 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,28 @@ int main()
         const Animal* meta = new Animal();
         const Animal* j = new Dog();
         const WrongAnimal* i = new WrongCat();
-        std::cout << j->getType() << " " << std::endl;
-        std::cout << i->getType() << " " << std::endl;
+        const WrongAnimal* wrong = new WrongAnimal();
+        std::cout << "type: " << j->getType() << " " << std::endl;
+        std::cout << "type: " << i->getType() << " " << std::endl;
         i->makeSound(); // will output the WrongCat sound!
         j->makeSound();
+        
+        wrong->makeSound();
         meta->makeSound();
 
         delete meta;
         delete j;
         delete i;
+        delete wrong;
     }
     {
         std::cout << YELLOW << "----- Deep copy TEST -----" << RESET << std::endl;
         Dog *d1 = new Dog();
         Dog *d2 = new Dog(*d1);
-        std::cout << d1->getType() << std::endl;
-        std::cout << d2->getType() << std::endl;
+        std::cout << "type: " << d1->getType() << std::endl;
+        std::cout << "type: " << d2->getType() << std::endl;
         d1->setType("modified_dog");
-        std::cout << d1->getType() << std::endl;
+        std::cout << "type: " << d1->getType() << std::endl;
         delete d1;
         delete d2;
     }
