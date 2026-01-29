@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:00:26 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:37:55 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:53:41 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ int main()
     // ok
     Cat c("randagio");
     c.makeSound();
+
+    Dog d("pastore");
+    d.makeSound();
+    // d.AAnimal::makeSound();
 
     return 0;
 }

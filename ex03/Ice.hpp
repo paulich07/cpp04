@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:42:36 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:46:21 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:53:59 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "AMateria.hpp"
 
-Class Ice : public AMateria
+class Ice : public AMateria
 {
     public:
         Ice();

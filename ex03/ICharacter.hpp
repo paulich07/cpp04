@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:47:47 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:48:32 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:54:08 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include "AMateria.hpp"
 
 class ICharacter
 {
