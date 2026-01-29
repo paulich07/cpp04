@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 19:52:38 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:32:06 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:43:59 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Dog : public AAnimal
         ~Dog();
         Dog &operator=(const Dog &other);
         void makeSound() const;
+
+        Brain *getBrain();
 };
 
 #endif

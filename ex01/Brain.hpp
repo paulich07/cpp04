@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:02:41 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:15:56 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:02:47 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ class Brain
         ~Brain();
 
         Brain& operator=(const Brain&);
+        void addIdea(std::string idea);
+
+        // test
+        void getIdeas() const;
 };
 
 #endif

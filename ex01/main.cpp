@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:00:26 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:23:44 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:01:34 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,48 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+#include <iostream>
+#include <string>
+
 int main()
 {
-    const Animal *arr[100];
-
-    for (size_t i = 0; i < 50; i++)
+    // Object slicing: oggetti temporanei creati e distrutti subito
+    // perdo tutte le info di Cat/Dog perchè uso copy constructor di Animal
+    // const Animal arr[4] = { Cat(), Dog(), Cat(), Dog() };
     {
-        arr[i] = new Cat();
+        std::cout << GREEN << "---- Correct Animals ----" << RESET << std::endl;
+        // array di 4 puntatori (stack)
+        Animal *arr[] = {
+            new Cat(), new Cat("cat1"), new Dog(), new Dog("dog1")
+        };
+    
+        int n = sizeof(arr) / sizeof(arr[0]);
+    
+        for (int i = 0; i < n; i++)
+        {
+            std::cout << "Animal [" << i << "] ";
+            arr[i]->makeSound();
+        }
+    
+        for (int i = 0; i < n; i++)
+            delete arr[i];
     }
-    for (size_t i = 50; i < 100; i++)
     {
-        arr[i] = new Dog();
+        std::cout << GREEN << "---- Brain Deep copy test ----" << RESET << std::endl;
+        Cat cat1("cat1");
+        cat1.getBrain()->addIdea("I want fish");
+        Cat cat2 = cat1; // copy constructor
+        std::cout << "cat1 ideas: " << std::endl;
+        cat1.getBrain()->getIdeas();
+        std::cout << "cat2 ideas: " << std::endl;
+        cat1.getBrain()->getIdeas();
+        std::cout << "cat2 add idea" << std::endl;
+        cat2.getBrain()->addIdea("I want MORE");
+        std::cout << "After modifying cat2:" << std::endl;
+        std::cout << "cat1 ideas: " << std::endl;
+        cat1.getBrain()->getIdeas();
+        std::cout << "cat2 ideas: " << std::endl;
+        cat2.getBrain()->getIdeas();
     }
-    for (size_t i = 0; i < 100; i++)
-    {
-        std::cout << "Animal [" << i << "] ";
-        arr[i]->makeSound();
-    }
-    for (size_t i = 0; i < 100; i++)
-    {
-        delete arr[i];
-    }
-
     return 0;
 }

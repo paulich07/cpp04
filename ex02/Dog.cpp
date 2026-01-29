@@ -6,29 +6,25 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 19:55:31 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:32:04 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:44:01 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog()  : AAnimal("dog")
+Dog::Dog() : AAnimal("dog"), brain(new Brain())
 {
     std::cout << "Dog default constructor called" << std::endl;
-    brain = new Brain();
 }
 
-Dog::Dog(std::string type) : AAnimal(type)
+Dog::Dog(std::string type) : AAnimal(type), brain(new Brain())
 {
     std::cout << "Dog constructor called" << std::endl;
-    brain = new Brain();
 }
 
-Dog::Dog(const Dog &other) : AAnimal(other)
+Dog::Dog(const Dog &other) : AAnimal(other), brain(new Brain(*other.brain))
 {
-    *this = other;
     std::cout << "Dog copy constructor called" << std::endl;
-    brain = new Brain(*other.brain);
 }
 
 Dog::~Dog()
@@ -42,6 +38,7 @@ Dog &Dog::operator=(const Dog& other)
     if (this != &other)
     {
         this->type = other.type;
+        *(this->brain) = *(other.brain);
     }
     return *this;
 }
@@ -49,4 +46,9 @@ Dog &Dog::operator=(const Dog& other)
 void Dog::makeSound() const
 {
     std::cout << type << ": Woff" << std::endl;
+}
+
+Brain *Dog::getBrain()
+{
+    return brain;
 }

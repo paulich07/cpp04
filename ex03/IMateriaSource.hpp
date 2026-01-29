@@ -1,30 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 20:30:32 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/28 16:10:41 by plichota         ###   ########.fr       */
+/*   Created: 2026/01/27 22:51:19 by plichota          #+#    #+#             */
+/*   Updated: 2026/01/27 22:51:28 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
-
-#include "WrongAnimal.hpp"
-
-class WrongCat : public WrongAnimal
-{
-    public:
-        WrongCat();
-        WrongCat(std::string type);
-        WrongCat(const WrongCat &other);
-        ~WrongCat();
-
-        WrongCat &operator=(const WrongCat &other);
-        void makeSound() const;
-};
-
-#endif

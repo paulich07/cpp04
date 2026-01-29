@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 18:13:03 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:23:45 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 19:50:46 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ class Cat : public Animal
         Cat& operator=(const Cat&);
 
         virtual void makeSound() const; // opzionale mettere virtual qui
+
+        // test
+        Brain *getBrain();
 };
 
 #endif

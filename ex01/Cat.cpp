@@ -6,29 +6,25 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 19:39:13 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:20:21 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 19:52:00 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("cat")
+Cat::Cat() : Animal("cat"), brain(new Brain())
 {
     std::cout << "Cat default constructor called" << std::endl;
-    brain = new Brain();
 }
 
-Cat::Cat(std::string type) : Animal(type)
+Cat::Cat(std::string type) : Animal(type), brain(new Brain())
 {
     std::cout << "Cat constructor called" << std::endl;
-    brain = new Brain();
 }
 
-Cat::Cat(const Cat &other) : Animal(other)
+Cat::Cat(const Cat &other) : Animal(other), brain(new Brain(*other.brain))
 {
-    *this = other;
     std::cout << "Copy constructor called" << std::endl;
-    brain = new Brain(*other.brain);
 }
 
 Cat::~Cat()
@@ -42,6 +38,7 @@ Cat &Cat::operator=(const Cat &other)
     if (this != &other)
     {
         this->type = other.type;
+        *(this->brain) = *(other.brain); // operator = di brain, NO copia pointer
     }
     return *this;
 }
@@ -49,4 +46,9 @@ Cat &Cat::operator=(const Cat &other)
 void Cat::makeSound() const
 {
     std::cout << type << ": Meow" << std::endl;
+}
+
+Brain *Cat::getBrain()
+{
+    return brain;
 }

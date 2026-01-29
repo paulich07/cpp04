@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:10:47 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:11:19 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:02:41 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 Brain::Brain()
 {
     std::cout << "Brain default constructor called" << std::endl;
+    for (int i = 0; i < 100; i++)
+    {
+        ideas[i] = "";
+    }
 }
 
 Brain::Brain(std::string idea)
 {
     std::cout << "Brain constructor called" << std::endl;
     ideas[0] = idea;
+    for (int i = 1; i < 100; i++)
+    {
+        ideas[i] = "";
+    }
 }
 
 Brain::Brain(std::string ideas[100])
@@ -53,4 +61,22 @@ Brain &Brain::operator=(const Brain& b)
         }
     }
     return *this;
+}
+
+void Brain::addIdea(std::string idea)
+{
+    int i = 0;
+    while (ideas[i] != "")
+        i++;
+    ideas[i] = idea;
+}
+
+void Brain::getIdeas() const
+{
+    int i = 0;
+    while (ideas[i] != "")
+    {
+        std::cout << ideas[i] << std::endl; 
+        i++;
+    }
 }

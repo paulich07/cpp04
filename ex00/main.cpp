@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:00:26 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:01:37 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/28 17:41:31 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,15 @@ int main()
     }
     {
         std::cout << YELLOW << "----- WRONG ANIMAL TEST -----" << RESET << std::endl;
-        const Animal* meta = new Animal();
-        const Animal* j = new Dog();
         const WrongAnimal* i = new WrongCat();
-        const WrongAnimal* wrong = new WrongAnimal();
-        std::cout << "type: " << j->getType() << " " << std::endl;
+        const WrongCat *cat = new WrongCat();
         std::cout << "type: " << i->getType() << " " << std::endl;
-        i->makeSound(); // will output the WrongCat sound!
-        j->makeSound();
-        
-        wrong->makeSound();
-        meta->makeSound();
+        std::cout << "type: " << cat->getType() << " " << std::endl;
+        i->makeSound(); // WrongAnimal sound
+        cat->makeSound(); // WrongCat sound
 
-        delete meta;
-        delete j;
+        delete cat;
         delete i;
-        delete wrong;
     }
     {
         std::cout << YELLOW << "----- Deep copy TEST -----" << RESET << std::endl;

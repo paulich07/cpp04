@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 20:01:54 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 20:48:54 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:44:22 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class WrongAnimal
 
         WrongAnimal& operator=(const WrongAnimal& other);
     
-        virtual void makeSound() const;
+        void makeSound() const;
         std::string getType() const;
 
         // Test
