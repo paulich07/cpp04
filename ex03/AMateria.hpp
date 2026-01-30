@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:41:17 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/27 22:50:49 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 16:13:24 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AMateria
 
         AMateria& operator=(const AMateria& other);
 
-        std::string const & getType() const; // Returns the materia type
+        std::string const & getType() const;
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
 };

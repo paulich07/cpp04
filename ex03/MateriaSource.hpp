@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 22:47:47 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:17:56 by plichota         ###   ########.fr       */
+/*   Created: 2026/01/30 16:25:01 by plichota          #+#    #+#             */
+/*   Updated: 2026/01/30 16:31:25 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-#include <string>
-#include <iostream>
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class ICharacter
+class MateriaSource : public IMateriaSource
 {
     public:
-        virtual ~ICharacter() {}
-        virtual std::string const & getName() const = 0;
-        virtual void equip(AMateria* m) = 0;
-        virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter& target) = 0;
+        MateriaSource();
+        MateriaSource(const MateriaSource& other);
+        ~MateriaSource();
 };
 
 #endif
