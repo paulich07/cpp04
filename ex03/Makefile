@@ -4,9 +4,11 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
 
 SRC = main.cpp \
-	  AMateria.cpp \
+	  Character.cpp \
 	  Ice.cpp \
-	  Cure.cpp
+	  Cure.cpp \
+	  MateriaSource.cpp
+
 
 all: $(NAME)
 

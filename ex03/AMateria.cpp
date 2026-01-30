@@ -6,34 +6,29 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 16:05:24 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:26:22 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 17:31:10 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() : type("AMateria")
-{
-}
-
 AMateria::AMateria(std::string const &type) : type(type)
 {
 }
 
-AMateria::AMateria(const AMateria& other) : type(other.type)
+AMateria::AMateria(const AMateria& other)
 {
+    *this = other;
 }
 
 AMateria::~AMateria()
 {
 }
 
-AMateria& AMateria::operator=(const AMateria& other)
+AMateria &AMateria::operator=(const AMateria& other)
 {
     if (this != &other)
-    {
         this->type = other.type;
-    }
     return *this;
 }
 
@@ -44,5 +39,5 @@ std::string const &AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-    // ?? tanto sono virtual
+    (void) target;
 }

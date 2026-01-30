@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 16:25:01 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 17:21:53 by plichota         ###   ########.fr       */
+/*   Created: 2026/01/30 16:40:35 by plichota          #+#    #+#             */
+/*   Updated: 2026/01/30 16:40:58 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#include "Ice.hpp"
 
-#include "IMateriaSource.hpp"
+        Ice();
+        Ice(std::string const &type);
+        Ice(const Ice& other);
+        ~Ice();
+        
+        Ice& operator=(const Ice& other);
 
-class MateriaSource : public IMateriaSource
-{
-    public:
-        MateriaSource();
-        MateriaSource(const MateriaSource& other);
-        ~MateriaSource();
-};
-
-#endif
+        AMateria* clone() const = 0;
+        void use(ICharacter& target);

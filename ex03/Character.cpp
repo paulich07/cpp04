@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 16:27:42 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:28:07 by plichota         ###   ########.fr       */
+/*   Created: 2026/01/30 17:07:07 by plichota          #+#    #+#             */
+/*   Updated: 2026/01/30 17:07:26 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "IMateriaSource.hpp"
+#include "Character.hpp"
 
-IMateriaSource::~IMateriaSource()
-{
-}
+        Character()
+        Character(std::string &name);
+        Character(Character const &src);
+        ~Character();
 
-void learnMateria(AMateria*) = 0;
-
-AMateria* createMateria(std::string const & type) = 0;
+        Character& operator=(Character const &src);
+        // metodi di ICharacter
+        std::string const & getName() const;
+        void equip(AMateria* m);
+        void unequip(int idx);
+        void use(int idx, ICharacter& target);

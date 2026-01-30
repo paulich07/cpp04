@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:42:45 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:05:12 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 16:38:23 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cure : public AMateria
         Cure();
         Cure(std::string const &type);
         Cure(const Cure& other);
-        virtual ~Cure();
+        ~Cure();
 
         Cure& operator=(const Cure& other);
 };

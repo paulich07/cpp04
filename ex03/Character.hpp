@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 16:18:18 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:23:58 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 17:24:53 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 class Character : public ICharacter
 {
     private:
-        AMateria* inventory[4]; // any type of AMateria
+        AMateria *inventory[4]; // any type of AMateria
+        std::string name;
     public:
         Character();
         Character(std::string &name);

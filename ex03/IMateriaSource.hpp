@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:51:19 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:27:26 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 17:21:50 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class IMateriaSource
 {
     public:
-        virtual ~IMateriaSource();
+        virtual ~IMateriaSource() {};
         virtual void learnMateria(AMateria*) = 0;
         virtual AMateria* createMateria(std::string const & type) = 0;
 };

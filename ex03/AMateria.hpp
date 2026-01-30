@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:41:17 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:13:24 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 17:30:22 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ class AMateria
     protected:
         std::string type;
     public:
-        AMateria();
         AMateria(std::string const &type);
         AMateria(const AMateria& other);
         virtual ~AMateria();
 
-        AMateria& operator=(const AMateria& other);
+        AMateria &operator=(const AMateria& other);
 
         std::string const & getType() const;
+
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
 };
