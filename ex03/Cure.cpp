@@ -6,17 +6,13 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 16:37:39 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 17:07:49 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 17:39:40 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure")
-{
-}
-
-Cure::Cure(std::string const &type) : AMateria(type)
 {
 }
 
@@ -33,7 +29,7 @@ Cure& Cure::operator=(const Cure& other)
 {
     if (this != &other)
     {
-        this->type = other.type; // altro??
+        // chiamo AMateria
     }
     return *this;
 }

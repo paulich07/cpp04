@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:42:36 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:40:51 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 17:36:37 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Ice : public AMateria
 {
     public:
         Ice();
-        Ice(std::string const &type);
         Ice(const Ice& other);
         ~Ice();
         

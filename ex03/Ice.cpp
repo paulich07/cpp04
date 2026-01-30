@@ -6,18 +6,38 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 16:40:35 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:40:58 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 17:41:39 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-        Ice();
-        Ice(std::string const &type);
-        Ice(const Ice& other);
-        ~Ice();
-        
-        Ice& operator=(const Ice& other);
+Ice::Ice() : AMateria("ice")
+{
+}
 
-        AMateria* clone() const = 0;
-        void use(ICharacter& target);
+Ice::Ice(const Ice& other) : AMateria(other)
+{
+    *this = other;
+}
+
+Ice::~Ice()
+{
+}
+
+Ice& Ice::operator=(const Ice& other)
+{
+    if (this != &other)
+    {
+        // chiamo AMateria
+    }
+    return *this;
+}
+
+AMateria* Ice::clone() const
+{
+    // creo new Ice
+    // ci copio i dati
+}
+
+void Ice::use(ICharacter& target);

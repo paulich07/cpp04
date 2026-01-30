@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:42:45 by plichota          #+#    #+#             */
-/*   Updated: 2026/01/30 16:38:23 by plichota         ###   ########.fr       */
+/*   Updated: 2026/01/30 17:36:32 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ class Cure : public AMateria
 {
     public:
         Cure();
-        Cure(std::string const &type);
         Cure(const Cure& other);
         ~Cure();
 
         Cure& operator=(const Cure& other);
+
+        AMateria* clone() const;
+        void use(ICharacter& target);
 };
 
 #endif
